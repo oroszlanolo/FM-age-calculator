@@ -1,0 +1,57 @@
+<div class="asd">
+    <form [formGroup]="dateForm" (ngSubmit)="onSubmit()">
+            <div class="input-part">
+                <div class="input-container" [ngClass]="dateForm.get('day')?.invalid && (dateForm.get('day')?.dirty || dateForm.get('day')?.touched || tryToSubmit) || !dateIsValid ? 'error' : ''">
+                    <label for="day">DAY</label>
+                    <input type="number" id="day" placeholder="DD" formControlName="day">
+                    <div *ngIf="dateForm.get('day')?.invalid && (dateForm.get('day')?.dirty || dateForm.get('day')?.touched || tryToSubmit) || !dateIsValid"
+                    class="error-message">
+
+                        <div *ngIf="dateForm.get('day')?.errors?.['required']">
+                            This field is required
+                        </div>
+                        <div *ngIf="dateForm.get('day')?.errors?.['min'] || dateForm.get('day')?.errors?.['max']">
+                            Must be a valid day
+                        </div>
+                        <div *ngIf="!dateIsValid">
+                            Must be a valid date
+                        </div>
+                    </div>
+                </div>
+                <div class="input-container" [ngClass]="dateForm.get('month')?.invalid && (dateForm.get('month')?.dirty || dateForm.get('month')?.touched || tryToSubmit) || !dateIsValid ? 'error' : ''">
+                    <label for="month">MONTH</label>
+                    <input type="number" id="month" placeholder="MM" formControlName="month">
+                    <div *ngIf="dateForm.get('month')?.invalid && (dateForm.get('month')?.dirty || dateForm.get('month')?.touched || tryToSubmit)"
+                    class="error-message">
+
+                        <div *ngIf="dateForm.get('month')?.errors?.['required']">
+                            This field is required
+                        </div>
+                        <div *ngIf="dateForm.get('month')?.errors?.['min'] || dateForm.get('month')?.errors?.['max']">
+                            Must be a valid day
+                        </div>
+                    </div>
+                </div>
+                <div class="input-container" [ngClass]="dateForm.get('year')?.invalid && (dateForm.get('year')?.dirty || dateForm.get('year')?.touched || tryToSubmit) || !dateIsValid ? 'error' : ''">
+                    <label for="year">YEAR</label>
+                    <input type="number" id="year" placeholder="YYYY" formControlName="year">
+                    <div *ngIf="dateForm.get('year')?.invalid && (dateForm.get('year')?.dirty || dateForm.get('year')?.touched || tryToSubmit)"
+                    class="error-message">
+
+                        <div *ngIf="dateForm.get('year')?.errors?.['required']">
+                            This field is required
+                        </div>
+                        <div *ngIf="dateForm.get('year')?.errors?.['min'] || dateForm.get('year')?.errors?.['max']">
+                            Must be a valid day
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-part">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="4"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+                </button>
+                <hr class="separator">
+            </div>
+    </form>
+</div>
