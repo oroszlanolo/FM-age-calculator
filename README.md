@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://oroszlanolo.github.io/FM-age-calculator/](https://oroszlanolo.github.io/FM-age-calculator/)
+- Live Site URL: [https://github.com/oroszlanolo/FM-age-calculator](https://github.com/oroszlanolo/FM-age-calculator)
 
 ## My process
 
