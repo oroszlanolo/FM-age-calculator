@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { MyDate } from '../myDate';
 
 @Component({
   selector: 'app-age-form',
@@ -15,7 +16,7 @@ export class AgeFormComponent {
   });
   tryToSubmit = false;
   dateIsValid = true;
-  @Output() dateUpdatedEvent = new EventEmitter<Date | null>();
+  @Output() dateUpdatedEvent = new EventEmitter<MyDate | null>();
   
   constructor(private fb: FormBuilder) { }
   
@@ -25,8 +26,7 @@ export class AgeFormComponent {
         this.tryToSubmit = false;
         this.dateIsValid = true;
         const d = this.dateForm.value;
-        const newDate= new Date(d.year!, d.month! - 1, d.day!);
-        this.dateUpdatedEvent.emit(newDate);
+        this.dateUpdatedEvent.emit({year: d.year!, month: d.month!, day: d.day!});
       } else {
         this.dateIsValid = false;
         this.tryToSubmit = true;

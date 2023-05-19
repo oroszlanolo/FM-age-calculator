@@ -41,8 +41,8 @@
                         <div *ngIf="dateForm.get('year')?.errors?.['required']">
                             This field is required
                         </div>
-                        <div *ngIf="dateForm.get('year')?.errors?.['min'] || dateForm.get('year')?.errors?.['max']">
-                            Must be a valid day
+                        <div *ngIf="dateForm.get('year')?.errors?.['max']">
+                            Must be in the past
                         </div>
                     </div>
                 </div>

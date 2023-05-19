@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyDate } from './myDate';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,12 @@ export class AppComponent {
   months = '--';
   days = '--';
 
-  updateDate(newDate: Date | null) {
+  updateDate(newDate: MyDate | null) {
     if(newDate) {
       const currentDate = new Date();
-      let years = currentDate.getFullYear() - newDate.getFullYear();
-      let months = currentDate.getMonth() - newDate.getMonth();
-      let days = currentDate.getDate() - newDate.getDate();
+      let years = currentDate.getFullYear() - newDate.year;
+      let months = currentDate.getMonth() + 1 - newDate.month;
+      let days = currentDate.getDate() - newDate.day;
       if(days < 0) {
         months--;
         days += 30;
