@@ -42,6 +42,7 @@ button {
     width: 4rem;
     aspect-ratio: 1 / 1;
     cursor: pointer;
+    transition: filter 300ms, transform 300ms;
 }
 button svg {
     width: 50%;
@@ -107,5 +108,9 @@ button svg {
     
     button {
         width: 5rem;
+    }
+    button:hover {
+        filter: brightness(150%);
+        transform: scale(110%);
     }
 }
